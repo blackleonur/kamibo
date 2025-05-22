@@ -546,6 +546,16 @@ export default function ScanScreen() {
           <View style={styles.cameraContainer}>
             <View style={styles.overlay}>
               <View style={styles.scanFrameContainer}>
+                <View style={{ marginBottom: 10 }}>
+                  <Text style={{
+                    color: 'white',
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    fontStyle:'italic'
+                  }}>
+                    Ekrana tıklayarak tarayabilirsiniz
+                  </Text>
+                </View>
                 <TouchableOpacity
                   style={styles.scanFrameWrapper}
                   onPress={takePicture}
@@ -689,10 +699,10 @@ export default function ScanScreen() {
             </View>
 
             <ScrollView style={styles.modalScrollView}>
-              <Text style={styles.scannedTextLabel}>Taranan Metin:</Text>
+              {/* <Text style={styles.scannedTextLabel}>Taranan Metin:</Text>
               <View style={styles.scannedTextBox}>
                 <Text style={styles.scannedText}>{scannedText}</Text>
-              </View>
+              </View> */}
 
               {isProductFound ? (
                 <View style={styles.foundContainer}>
