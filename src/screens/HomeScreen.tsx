@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   StyleSheet,
   Text,
@@ -12,14 +12,14 @@ import {
   ImageStyle,
   Platform,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {TabParamList} from '../types/navigation';
-import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import { useNavigation } from '@react-navigation/native';
+import { TabParamList } from '../types/navigation';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import LinearGradient from 'react-native-linear-gradient';
 
 type HomeScreenNavigationProp = BottomTabNavigationProp<TabParamList>;
 
-const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 const DESIGN_WIDTH = 393;
 const DESIGN_HEIGHT = 852;
@@ -37,7 +37,7 @@ const isSmallScreen = ASPECT_RATIO > 0.5;
 const DashedBorder = () => {
   return (
     <View style={styles.dashedBorderContainer}>
-      {Array.from({length: 30}).map((_, index) => (
+      {Array.from({ length: 30 }).map((_, index) => (
         <View key={index} />
       ))}
     </View>
@@ -47,7 +47,7 @@ const DashedBorder = () => {
 // Noktalı desen bileşeni
 const DotPattern = () => {
   // Nokta sayısını 250'ye çıkaralım
-  const dots = Array.from({length: 250}).map((_, index) => ({
+  const dots = Array.from({ length: 250 }).map((_, index) => ({
     id: index,
     top: Math.random() * 100,
     left: Math.random() * 100,
@@ -119,7 +119,7 @@ export default function HomeScreen() {
                 resizeMode="contain"
               />
               <Text style={styles.logoText}>
-                Zulmü Destekleyenleri Karınca Misali Boykot Et
+                Bilinçli tüketim alışkanlıklarıyla adil bir dünyaya katkıda bulun
               </Text>
               <DashedBorder />
             </View>
@@ -136,10 +136,8 @@ export default function HomeScreen() {
                   />
                   <View style={styles.sloganTextContainer}>
                     <Text style={styles.sloganText}>
-                      Adalet, vicdan ve bilinçli tüketim için bir adım attın.
-                      Unutma, karınca misali küçük adımlar büyük değişimlerin
-                      başlangıcıdır.
-                    </Text>
+                      Bilinçli tüketim alışkanlıklarıyla toplumsal değişime katkıda bulunuyorsun. Küçük adımlar, büyük farklar yaratabilir
+                                          </Text>
                     <Text style={styles.sloganSignature}>Kamibo ailesi</Text>
                   </View>
                 </View>
@@ -161,7 +159,7 @@ export default function HomeScreen() {
             style={[
               styles.directionalArrowsContainer,
               {
-                transform: [{translateY: containerTranslate}],
+                transform: [{ translateY: containerTranslate }],
               },
             ]}>
             <Image
@@ -249,7 +247,7 @@ const styles = StyleSheet.create({
     marginLeft: normalize(isSmallScreen ? 130 : 150),
     marginTop: normalizeVertical(isSmallScreen ? 8 : 10),
     zIndex: 1,
-    width: normalize(isSmallScreen ? 280 : 320),
+
   },
   sloganContainer: {
     paddingHorizontal: normalize(20),
