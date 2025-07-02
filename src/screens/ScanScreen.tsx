@@ -639,46 +639,48 @@ export default function ScanScreen() {
         transparent={true}
         visible={editModalVisible}
         onRequestClose={() => setEditModalVisible(false)}>
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalTitle}>Tarama Sonucu</Text>
-            <ScrollView
-              style={styles.modalScrollView}
-              showsVerticalScrollIndicator={false}>
-              <View style={styles.notFoundContainer}>
-                <Text style={styles.notFoundText}>
-                  "{scannedText}" ürününe dair bir kayıt bulunmamaktadır
-                </Text>
-              </View>
-              <Text style={styles.editHintText}>
-                Ürün ismini düzenleyip tekrar sorgulayabilirsiniz
-              </Text>
-              <TextInput
-                style={styles.editInput}
-                value={editableText}
-                onChangeText={setEditableText}
-                multiline
-                placeholder="Ürün adını düzenleyin..."
-                placeholderTextColor="#999"
-                returnKeyType="done"
-                blurOnSubmit={true}
-              />
-            </ScrollView>
+          <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding" enabled>
+            <View style={styles.modalOverlay}>
+              <View style={styles.modalView}>
+                <Text style={styles.modalTitle}>Tarama Sonucu</Text>
+                <ScrollView
+                  style={styles.modalScrollView}
+                  showsVerticalScrollIndicator={false}>
+                  <View style={styles.notFoundContainer}>
+                    <Text style={styles.notFoundText}>
+                      "{scannedText}" ürününe dair bir kayıt bulunmamaktadır
+                    </Text>
+                  </View>
+                  <Text style={styles.editHintText}>
+                    Ürün ismini düzenleyip tekrar sorgulayabilirsiniz
+                  </Text>
+                  <TextInput
+                    style={styles.editInput}
+                    value={editableText}
+                    onChangeText={setEditableText}
+                    multiline
+                    placeholder="Ürün adını düzenleyin..."
+                    placeholderTextColor="#999"
+                    returnKeyType="done"
+                    blurOnSubmit={true}
+                  />
+                </ScrollView>
 
-            <View style={styles.buttonRow}>
-              <TouchableOpacity
-                style={[styles.actionButton, styles.cancelButton]}
-                onPress={() => setEditModalVisible(false)}>
-                <Text style={styles.actionButtonText}>İptal</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[styles.actionButton, styles.confirmButton]}
-                onPress={handleEditSubmit}>
-                <Text style={styles.actionButtonText}>Sorgula</Text>
-              </TouchableOpacity>
+                <View style={styles.buttonRow}>
+                  <TouchableOpacity
+                    style={[styles.actionButton, styles.cancelButton]}
+                    onPress={() => setEditModalVisible(false)}>
+                    <Text style={styles.actionButtonText}>İptal</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.actionButton, styles.confirmButton]}
+                    onPress={handleEditSubmit}>
+                    <Text style={styles.actionButtonText}>Sorgula</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
             </View>
-          </View>
-        </View>
+          </KeyboardAvoidingView>
       </Modal>
 
       <Modal
